@@ -1,7 +1,7 @@
 from flask import Flask,render_template
 #from ss.data_table import dataTable
-from data_plotly import line
-from data_table import dataTable
+from data_scatter_plotly import line
+from ss.data_table_plotly import dataTable
 
 ## Define variables for Exploratory Data Analysisd
 
