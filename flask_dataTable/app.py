@@ -1,13 +1,18 @@
 from flask import Flask,render_template,jsonify
 from dataTable import source_data
+from col_dataTable import dataColTable
 
 app = Flask(__name__)
 
 @app.route("/get-data")
 def get_data():
-    response = source_data()
-    return response
-    #return jsonify({"a": 1, "b": 2})
+    response1 = source_data()
+    return response1
+
+@app.route("/get-data2")
+def get_data2():
+    response2 = dataColTable()
+    return response2
 
 @app.route('/')
 def index():

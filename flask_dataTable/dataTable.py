@@ -8,7 +8,7 @@ def source_data():
     # json = df.to_json(orient='records')
 
     ### -----> Load Data
-    df = pickle.load(open('../SalesForce EDA/pickleFiles/extract_salesforceData.pkl', 'rb'))
+    df = pickle.load(open('data/extract_salesforceData.pkl', 'rb'))
     df_head = df.head()
     df_describe = df.describe()
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="{{template}}">
+  <div class="container">
+	  {% block content %}
+	  {%app_entry%}
+
+        {%config%}
+        {%scripts%}
+        {%renderer%}
+
+	  {% endblock %}
+  </div>
+  {% include 'analytics.jinja2' %}
+</body>
+
+
+
+</html>
