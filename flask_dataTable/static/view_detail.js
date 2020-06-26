@@ -38,6 +38,7 @@ function tabulate(data) {
 		    .text(function (d) { return d.value; })
 		    //.attr("id", "piechart")
 
+
        // chart("Amount")//.node().classList.add("piechart");
 
 //       d3.select("#months")
