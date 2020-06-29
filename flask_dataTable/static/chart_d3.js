@@ -1,10 +1,25 @@
-d3.json("/get-data").then(
+d3.json("/get-data3").then(
     function plot(data) {
-        var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+//        var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+//                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
+        var sliceNumber = Object.values(data['IsWon']).findIndex(rank => rank === "")/2
+
+        if (sliceNumber <= 10) {
+            var values = Object.values(data['IsWon']).slice(0,sliceNumber)
+            var freq = Object.values(data['IsWon']).slice(sliceNumber,sliceNumber*2)
+        }
+        else  {
+            var values = Object.values(data['IsWon']).slice(0,10)
+            var freq = Object.values(data['IsWon']).slice(10,20)
+        }
+
+
+
+        // index of
+        var dataset = freq
         //Width and height
-        var w = 500;
+        var w = 300;
         var h = 100;
         var barPadding = 1;
 
@@ -29,7 +44,7 @@ d3.json("/get-data").then(
             return h - d;  //Height minus data value
         })
         .attr("height", function(d) {
-            return d;  //Just the data value
+            return d*100;  //Just the data value
         });
 
 
