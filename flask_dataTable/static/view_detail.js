@@ -1,6 +1,5 @@
 d3.json("/get-data").then(
 function tabulate(data) {
-
 		var table = d3.select('#table_1').append('table')
 		var thead = table.append('thead')
 		var	tbody = table.append('tbody');
