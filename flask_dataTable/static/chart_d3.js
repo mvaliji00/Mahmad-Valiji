@@ -14,8 +14,6 @@ d3.json("/get-data3").then(
             var freq = Object.values(data['IsWon']).slice(10,20)
         }
 
-
-
         // index of
         var dataset = freq
         //Width and height

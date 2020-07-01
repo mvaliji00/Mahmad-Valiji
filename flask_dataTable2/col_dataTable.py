@@ -3,7 +3,7 @@ import pickle
 
 def dataColTable():
     ### -----> Load Data
-    df = pickle.load(open('../SalesForce EDA/pickleFiles/extract_salesforceData.pkl', 'rb'))
+    df = pickle.load(open('data/extract_salesforceData.pkl', 'rb'))
     unique_values = df.nunique()
     column_names = df.columns.values
     missing_count = (df.isna().sum() / df.shape[0]) * 100
