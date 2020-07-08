@@ -1,7 +1,6 @@
 window.onload = function (){
     var button = document.getElementById("applyButton")
 
-
     button.addEventListener('click',function ()
         {
             var selection = $('#myselect').val()
@@ -24,7 +23,6 @@ window.onload = function (){
                     $(cell).hide()
                     window.hidden.push(cell)
                 }
-
 
                 //remove from column tab
                 table = 'table'+index

@@ -20,6 +20,13 @@ d3.json('/get-data4').then(function(data){
 	.enter()
 	.append('a')
 	.html(String)
+    .on("click", function (d,i) {
+//        d3.select('#nodeInfos').html("name: "+d.label+"<br/> "+d.infos+");
+//        self.attr("fill", "orange");
+        console.log(d)
+
+    })
+
 })
 
 

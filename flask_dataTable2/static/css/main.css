@@ -17,10 +17,11 @@
 }
 
 #sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 15px;
   text-decoration: none;
   font-size: 15px;
-  color: #818181;
+  /*color: #818181;*/
+  color: lightgrey;
   display: block;
   transition: 0.3s;
 }
@@ -48,7 +49,8 @@
 }
 
 .openbtn:hover {
-  background-color: #444;
+  /*background-color: #444;*/
+  background-color: #565656;
 }
 
 .openbtn:focus {

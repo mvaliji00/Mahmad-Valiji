@@ -8,8 +8,4 @@ function closeNav() {
   document.getElementById("content").style.marginLeft= "0";
 }
 
-function sidebarClick () {
-    console.log('hey')
-}
-
 

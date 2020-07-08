@@ -1,4 +1,4 @@
-from flask import Flask,render_template,jsonify
+from flask import Flask,render_template,request
 from dataTable import source_data
 from col_dataTable import dataColTable
 from chart_table2 import table1_chart_data
@@ -30,6 +30,12 @@ def get_data3():
 def get_data4():
     response4 = list_of_source_data()
     return response4
+
+@app.route('/data')
+def data():
+    # here we want to get the value of user (i.e. ?user=some-value)
+    user = request.args.get('user')
+    return { 0: user }
 
 @app.route('/')
 def index():
