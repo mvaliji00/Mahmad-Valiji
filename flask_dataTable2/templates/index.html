@@ -13,6 +13,8 @@
         <script type="text/javascript" src="{{ url_for('static', filename = 'bar.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename = 'view_detail.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename = 'view_column.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'sidebarAnimation.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'dataList.js') }}"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
         <!-- Bootstrap CSS -->
@@ -30,20 +32,23 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
-        <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/i18n/defaults-en_US.min.js"></script>-->
-
         {% block body %}{% endblock %}
     </head>
 
     <body>
         <header>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <button class="openbtn" onclick="openNav()">☰</button>
                 <a class="navbar-brand" href="#">DAC: DataView</a>
             </nav>
         </header>
 
         {% block content %}
         {% endblock %}
+
+    <script>
+
+
+    </script>
     </body>
 </html>

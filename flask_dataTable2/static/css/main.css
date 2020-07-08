@@ -1,3 +1,68 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
+#sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #343a40;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-top: 1px solid white;
+}
+
+#sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#sidebar a:hover {
+  color: #f1f1f1;
+}
+
+#sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #343a40;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.openbtn:focus {
+    outline: 0;
+}
+
+#content {
+  transition: margin-left .5s;
+}
+
+.navbar-brand {
+    margin-left: 15px;
+}
+
 #table_1 {
     height: 550px;
     overflow-x: auto;
@@ -16,9 +81,6 @@
     border-right: 1px solid rgb(236, 236, 237);
 }
 
-/*table_1 tr {
-    min-height: 25px;
-}*/
 
 div#table_1 {
     border: 1px solid white;
@@ -93,9 +155,9 @@ td#cell3 {
 }
 
 label {
-color: $muted;
-display: block;
-margin-top: 2rem;
+    color: $muted;
+    display: block;
+    margin-top: 2rem;
 }
 
 .dropdown-menu.show {
@@ -119,6 +181,3 @@ margin-top: 2rem;
   transform: translate3d(0, 37px, 0px) !important;
 }
 
-/*.bootstrap-select .dropdown-menu li a span.text {
-  white-space: initial !important;
-}*/
