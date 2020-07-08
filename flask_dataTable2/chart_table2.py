@@ -3,7 +3,7 @@ import pickle
 
 def table1_chart_data():
     ### -----> Load Data
-    df = pickle.load(open('../SalesForce EDA/pickleFiles/raw_salesforceData.pkl', 'rb'))
+    df = pickle.load(open('/data/extract_salesforceData.pkl', 'rb'))
     # df_head = df.head()
     # df_describe = df.describe()
 
