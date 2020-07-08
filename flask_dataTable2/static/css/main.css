@@ -1,16 +1,33 @@
 #table_1 {
-    height: 530px;
+    height: 550px;
     overflow-x: auto;
     margin: 20px;
     margin-top: 50px;
     table-layout:fixed;
+    margin-left:125px;
 }
+
+#table_1 .sticky-col {
+    margin-left: -108px;
+    position: absolute;
+    max-height: 25px;
+    min-width: 105px;
+    border: white;
+    border-right: 1px solid rgb(236, 236, 237);
+}
+
+/*table_1 tr {
+    min-height: 25px;
+}*/
+
 div#table_1 {
     border: 1px solid white;
 }
 
 #table_1 th,#table_1 td {
   border: 1px solid rgb(236, 236, 237);
+  min-width: 25px;
+  background-color:white;
 }
 
 #table_1 td  {
@@ -84,3 +101,24 @@ margin-top: 2rem;
 .dropdown-menu.show {
     transform: none !important;
 }
+
+#dropdown {
+    position:absolute;
+    right:0px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.bootstrap-select {
+  position: relative !important;
+}
+
+.bootstrap-select .dropdown-menu {
+  right: 0 !important;
+  left: -100% !important;
+  transform: translate3d(0, 37px, 0px) !important;
+}
+
+/*.bootstrap-select .dropdown-menu li a span.text {
+  white-space: initial !important;
+}*/

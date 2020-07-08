@@ -8,7 +8,7 @@ def source_data():
     # json = df.to_json(orient='records')
 
     ### -----> Load Data
-    df = pickle.load(open('data/extract_salesforceData.pkl', 'rb'))
+    df = pickle.load(open('../SalesForce EDA/pickleFiles/raw_salesforceData.pkl', 'rb'))
     df_head = df.head()
     df_describe = df.describe()
 
@@ -23,11 +23,13 @@ def source_data():
     temp = [str(i) + ' Unique Values' if i > 50 else str(i) + ' Categories' for i in val]
     category = pd.DataFrame([temp], columns=col, index=[''])
 
-    data = pd.concat([category, df_describe, df_head,df_quality], sort=True)
-    #data = data.reset_index()#.rename(columns={'index': 'Index'}
+    data = pd.concat([category, df_describe, df_head,df_quality])#, sort=True)
+    data = data.reset_index().rename(columns={'index': 'Index'})
 
-    data.index = data.index.values# ['a', 'b', 'c','d','e','f','g','h','j','k','l','i','v','p']
+    data.index = data.index.values  # ['a', 'b', 'c','d','e','f','g','h','j','k','l','i','v','p']
     json = data.to_json(orient='records')
 
     return json
 
+#k,v = source_data()
+#print(v)

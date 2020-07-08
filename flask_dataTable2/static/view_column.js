@@ -3,10 +3,10 @@ d3.json("/get-data2").then(
             var columns = d3.keys(data)
             for (i = 0; i < columns.length; i++) {
                 data_json = [
-                        { '0' : "", '1' : "missing",'2' : data[columns[i]]["missing"],'3' : "val"+"%"},
-                        { '0' : data[columns[i]]["unique"], '1' : "unique",'2' : data[columns[i]]["unique"],'3' : "val"+"%" },
-                        { '0' : "unique values", '1' : "valid",'2' : data[columns[i]]["valid"],'3' : "val"+"%"},
-                        { '0' : "", '1' : "value",'2' : data[columns[i]]["value"],'3' : "val"+"%"},
+                        { '0' : "", '1' : "missing",'2' : data[columns[i]]["missing"],'3' : data[columns[i]]["missing_perc"]+"%"},
+                        { '0' : data[columns[i]]["unique"], '1' : "unique",'2' : data[columns[i]]["unique"],'3' : data[columns[i]]["unique_perc"]+"%" },
+                        { '0' : "unique values", '1' : "valid",'2' : data[columns[i]]["valid"],'3' : data[columns[i]]["valid_perc"]+"%"},
+                        { '0' : "", '1' : "value",'2' : data[columns[i]]["value"],'3' : data[columns[i]]["value_perc"]+"%"},
                     ]
 
                 var table = d3.select('#table_2').append('table' + i.toString()).attr("class", "details_table")
@@ -29,9 +29,6 @@ d3.json("/get-data2").then(
                     .attr("colspan", function(d){
                         if (d === columns[i]) {return 3}
                     });
-//                    .attr("id", function(d){
-//                        if (d === columns[i]) {bar(columns[i])}
-//                    })
 
                 var rows = tbody.selectAll('tr')
                   .data(data_json)
@@ -48,7 +45,7 @@ d3.json("/get-data2").then(
                  .attr("id", (d,k)=>"cell"+k);
 
                 //call bar plot
-                bar('#table2_' + columns[i],data[columns[i]]["valid"],data[columns[i]]["missing"]);
+                bar('#table2_' + columns[i],data[columns[i]]["valid_perc"],data[columns[i]]["missing_perc"]);
 
                 //bar(columns[i],data[columns[i]]["valid"],data[columns[i]]["missing"]);
 

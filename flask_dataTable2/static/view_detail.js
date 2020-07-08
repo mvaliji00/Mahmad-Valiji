@@ -8,30 +8,47 @@ function tabulate(data) {
     var table_data = data.slice(0,14)
     var quality_data = data.slice(14,16)
     var columns = Object.keys(d3.values(table_data)[0])
+    window.columns = columns
 
     // append the header row
     thead.append('tr')
       .selectAll('th')
       .data(columns).enter()
       .append('th')
-      .text(function (column) { return column; });
+      .text(function (column,i) {
+        return column;
+      })
+      .attr("class", (column,i) => {
+        if (i === 0) { return "sticky-col"}
+      });
+
 
     thead.append('tr')
       .selectAll('th')
       .data(columns).enter()
       .append('th')
-      .attr("id", (column) => {return "table1_chart_" + column});
+      .attr("id", (column) => {return "table1_chart_" + column})
+      .attr("class", (column,i) => {
+        if (i === 0) { return "sticky-col"}
+      });
 
     thead.append('tr')
       .selectAll('th')
       .data(columns).enter()
       .append('th')
       .attr("id", (column) => {return "table1_" + column})
+      .attr("class", (column,i) => {
+        if (i === 0) { return "sticky-col"}
+      })
+      .style("max-height", "none")
+      .style("height", "100px");
 
     for (i = 0; i < columns.length; i++) {
-        chartd3(columns[i]);
-        //quality_data[0][columns[i]]
-        bar('#table1_chart_' + columns[i],quality_data[0][columns[i]],quality_data[1][columns[i]]);
+        if (i!=0) {
+            chartd3(columns[i]);
+            //quality_data[0][columns[i]]
+            bar('#table1_chart_' + columns[i],quality_data[0][columns[i]],quality_data[1][columns[i]]);
+        }
     }
 
     // create a row for each object in the data
@@ -50,7 +67,9 @@ function tabulate(data) {
       .enter()
       .append('td')
       .text(function (d) { return d.value; })
-      .attr("width", "100px");
+      .attr("class", (d,i) => {
+        if (i === 0) { return "sticky-col"}
+      })
 
 
     // populate dropdown menu
@@ -58,9 +77,10 @@ function tabulate(data) {
     for (i = 0; i < columns.length; i++) {
         selectGroup.append("option").text(columns[i])
     };
-
-    // refresh  dropdown menu
+//    selectGroup.append("title").text("pick one");
+//    // refresh  dropdown menu
     $("#myselect").selectpicker("refresh");
+
 
     //.append("option").text("data1")
     //.append("option").text("data2");
