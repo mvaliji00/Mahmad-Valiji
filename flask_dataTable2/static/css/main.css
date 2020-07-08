@@ -38,7 +38,7 @@
   margin-left: 50px;
 }
 
-.openbtn {
+.sidebarToggle{
   font-size: 20px;
   cursor: pointer;
   background-color: #343a40;
@@ -48,12 +48,12 @@
   border-radius: 50%;
 }
 
-.openbtn:hover {
+.sidebarToggle:hover {
   /*background-color: #444;*/
   background-color: #565656;
 }
 
-.openbtn:focus {
+.sidebarToggle:focus {
     outline: 0;
 }
 
