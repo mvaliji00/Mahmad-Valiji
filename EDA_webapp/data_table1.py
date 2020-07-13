@@ -19,12 +19,12 @@ def get_table1Data(filepath):
     val = unique_values
 
     temp = [str(i) + ' Unique Values' if i > 50 else str(i) + ' Categories' for i in val]
-    category = pd.DataFrame([temp], columns=col, index=[''])
+    category = pd.DataFrame([temp], columns=col, index=['Uniqueness'])
 
     data = pd.concat([category, df_describe, df_head,df_quality], sort=False)
     data = data.reset_index().rename(columns={'index': 'Index'})
 
-    data.index = data.index.values  # ['a', 'b', 'c','d','e','f','g','h','j','k','l','i','v','p']
+    data.index = data.index.values
     json = data.to_json(orient='records')
     return json
 

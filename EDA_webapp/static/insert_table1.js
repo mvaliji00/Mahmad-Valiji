@@ -27,15 +27,22 @@ function insertTable1() {
           .selectAll('th')
           .data(columns).enter()
           .append('th')
+          .text(function (column,i) {
+            if (i === 0) { return "Data Quality"}
+          })
           .attr("id", (column) => {return "table1_chart_" + column})
           .attr("class", (column,i) => {
             if (i === 0) { return "sticky-col"}
           });
 
+
         thead.append('tr')
           .selectAll('th')
           .data(columns).enter()
           .append('th')
+          .text(function (column,i) {
+            if (i === 0) { return "Distribution"}
+          })
           .attr("id", (column) => {return "table1_" + column})
           .attr("class", (column,i) => {
             if (i === 0) { return "sticky-col"}

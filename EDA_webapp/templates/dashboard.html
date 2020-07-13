@@ -5,12 +5,16 @@
 
 {% block content %}
     <div id="sidebar">
+      <p>Data Sources:</p>
       <div id="dataList"></div>
 
-      <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
-         <input type = "file" name = "file" />
-         <input type = "submit"/>
-      </form>
+      <div id="uploadOption">
+        <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+             <input type = "file" name = "file" />
+             <input type = "submit"/>
+        </form>
+      </div>
+
     </div>
 
     <div id="content">

@@ -17,17 +17,26 @@
 }
 
 #sidebar a {
-  padding: 8px 8px 8px 15px;
+  padding: 8px 8px 8px 25px;
   text-decoration: none;
   font-size: 15px;
   /*color: #818181;*/
   color: lightgrey;
   display: block;
   transition: 0.3s;
+  list-style-type: circle;
+  list-style-position: inside;
+  display: list-item;
 }
 
 #sidebar a:hover {
   color: #f1f1f1;
+}
+
+#sidebar p {
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 #sidebar .closebtn {
@@ -57,6 +66,13 @@
     outline: 0;
 }
 
+#uploadOption {
+    bottom: 90px;
+    position: absolute;
+    padding-left: 10px;
+    color: white;
+}
+
 #content {
   transition: margin-left .5s;
 }
@@ -79,8 +95,11 @@
     position: absolute;
     max-height: 25px;
     min-width: 105px;
-    border: white;
+    /* border: white; */
     border-right: 1px solid rgb(236, 236, 237);
+    font-weight: bold;
+    color: black;
+    background-color: lightgrey;
 }
 
 
