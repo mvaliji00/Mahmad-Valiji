@@ -42,11 +42,13 @@ def save_SQLDB_data():
     WHERE
         o.type = 'U'
         OR o.type = 'V' ''', conn)
-    df_filenames = pd.DataFrame(SQL_DBQuery)
-    df_filenames = df_filenames['ObjectName']
 
-    for i in df_filenames:
-        df = pd.read_sql_query('''select * FROM ''' + i, conn)
-        pickle.dump(df, open('data/' + i + '.pkl', 'wb'))
+    df_filenames = pd.DataFrame(SQL_DBQuery)
+    filenames = df_filenames['ObjectName']
+    schema = df_filenames['SchemaName']
+
+    for i in range(df_filenames.size):
+        df = pd.read_sql_query('''select * FROM [''' + schema[i] + '''].[''' + filenames[i] +''']''', conn)
+        pickle.dump(df, open('data/' + filenames[i] + '.pkl', 'wb'))
 
     print('SQL data is loaded..')
