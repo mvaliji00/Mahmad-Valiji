@@ -3,12 +3,13 @@ from data_table1 import get_table1Data
 from data_table1_chart import get_table1chartData
 from data_table2 import get_table2Data
 from listofdatafiles import get_dataSources
-from load_SQLdata import save_SQLdata
+from load_SQLdata import save_SQLQuery_data, save_SQLDB_data
 from load_CSVdata import save_CSVdata
 from save_uploadedFile import save_file
 
 ### script to load data into the data folder for the app
-#save_SQLdata()  ##fetch data from SQL Server
+#save_SQLQuery_data() ##fetch data from SQL Server (single Query)
+#save_SQLDB_data()  ##fetch data from SQL Server (full DB)
 #save_CSVdata()  ##fetch data from CSV file
 
 ### launch web app on port 5000
