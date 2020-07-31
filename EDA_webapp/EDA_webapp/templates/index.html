@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exploratory Data Analysis</title>
+        <link rel="shortcut icon" href="#" />
+
+        <!-- D3js -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="{{ url_for('static', filename = 'plot_hbar.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'plot_vbar.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'insert_table1.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'insert_table2.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'insert_tableoverview.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'datasource_list.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'table1_chartData.js') }}"></script>
+        <script type="text/javascript" defer src="{{ url_for('static', filename = 'dropdown_filter.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'sidebarAnimation.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+        <!-- Bootstrap CSS -->
+        <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+        {% block body %}{% endblock %}
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <button class="sidebarToggle" onclick="sidebarToggle()">☰</button>
+                <a class="navbar-brand" href="#">DAC: DataView</a>
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>
